@@ -55,7 +55,7 @@ function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
 function show(){
  if(i>=Q.length){return end()}
  var q=Q[i];
- app.innerHTML='<h1>🦁 Quiz do Clube Leão</h1><p class="sub">Pergunta '+(i+1)+' de '+Q.length+' · '+pts+' acertos</p>'+
+ app.innerHTML=<img src="logo.png" alt="Logo do Clube de Desbravadores" style="max-width:110px;display:block;margin:0 auto 8px">'<h1>🦁 Quiz do Clube Leão</h1><p class="sub">Pergunta '+(i+1)+' de '+Q.length+' · '+pts+' acertos</p>'+
  '<div class="bar"><i style="width:'+(i/Q.length*100)+'%"></i></div><p class="q">'+esc(q[0])+'</p>'+
  q[1].map(function(o,k){return '<button class="opt" data-k="'+k+'">'+esc(o)+'</button>'}).join('')+
  '<div class="msg" id="msg" aria-live="polite"></div>';
@@ -73,7 +73,7 @@ function pick(k){
 }
 function end(){
  var p=pts/Q.length,t=p===1?'🏆 Perfeito! Você conhece toda a história do clube!':p>=.7?'👏 Muito bem! Você conhece bem a história do Leão.':p>=.4?'🙂 Bom começo! Leia a história e tente de novo.':'📖 Vale estudar a história do clube e tentar de novo!';
- app.innerHTML='<h1>🦁 Resultado final</h1><p class="big">'+pts+' de '+Q.length+'</p><p>'+t+'</p><p class="lema">“Até aqui chegamos pela fé.”</p><button class="go" id="r">Jogar de novo</button>';
+ app.innerHTML=<img src="logo.png" alt="Logo do Clube de Desbravadores" style="max-width:110px;display:block;margin:0 auto 8px">'<h1>🦁 Resultado final</h1><p class="big">'+pts+' de '+Q.length+'</p><p>'+t+'</p><p class="lema">“Até aqui chegamos pela fé.”</p><button class="go" id="r">Jogar de novo</button>';
  document.getElementById('r').onclick=function(){i=0;pts=0;show()};
 }
 show();
